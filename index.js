@@ -1,5 +1,6 @@
-// Main FUnction
+// Main Function
 function showTime() {
+	
 	// Variables to Get Time and Dates
 	const date = new Date;
 	let h = date.getHours();
@@ -64,10 +65,12 @@ function showTime() {
 	document.getElementById("m").innerText = m;
 	document.getElementById("s").innerText = s;
 	document.getElementById("todayDate").innerText = todayDate;
+
 	// Timed Out When No Response Given in 1000 milliseconds => 1 second
 	setTimeout(showTime, 1000);
 }
 
+// Array of Quotes
 const quotes = [
 
 	`
@@ -121,9 +124,10 @@ const quotes = [
 			– Winston Churchill
 	`
 ];
-let randomInt = Math.floor(Math.random() * 10)
 
-setInterval(document.getElementById("quote").innerText=quotes[randomInt], 3600000)
+let randomInt = Math.floor(Math.random() * 10) // Generates a random number from 0 - 10
+
+document.getElementById("quote").innerText = quotes[randomInt] // Sets a random quote
 
 // Runs Function and Updates Values in Function every 1000 milliseconds => 1 second
 setInterval(showTime, 1000)
